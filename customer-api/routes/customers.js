@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // GET specific customer with order count
-router.get('/user_id', (req, res) => {
+router.get('/:user_id', (req, res) => {
   const customerId = req.params.user_id;
 
   db.query('SELECT * FROM users WHERE user_id = ?', [customerId], (err, customers) => {
@@ -29,9 +29,10 @@ router.get('/user_id', (req, res) => {
       res.json({
         success: true,
         customer: {
-          user_id: user_id,
-          name: first_name,
-          email: email,
+          id: customer.user_id,
+          fisrt_name: customer.first_name,
+          last_name: customer.last_name,
+          email: customer.email,
           number_of_items: countResult[0].number_of_items
         }
       });
