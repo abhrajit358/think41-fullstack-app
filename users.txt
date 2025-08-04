@@ -1,0 +1,17 @@
+CREATE TABLE `think41_ecommerce`.`users` (
+  `id` INT NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `age` VARCHAR(45) NOT NULL,
+  `gender` VARCHAR(45) NOT NULL,
+  `state` VARCHAR(45) NOT NULL,
+  `street_address` VARCHAR(45) NOT NULL,
+  `postal_code` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NOT NULL,
+  `country` VARCHAR(45) NOT NULL,
+  `latitude` VARCHAR(45) NOT NULL,
+  `longitude` VARCHAR(45) NOT NULL,
+  `traffic_source` VARCHAR(45) NOT NULL,
+  `created_at` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
