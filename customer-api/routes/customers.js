@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
 });
 
 // GET specific customer with order count
-router.get('/:id', (req, res) => {
-  const customerId = req.params.id;
+router.get('/user_id', (req, res) => {
+  const customerId = req.params.user_id;
 
   db.query('SELECT * FROM users WHERE user_id = ?', [customerId], (err, customers) => {
     if (err) return res.status(400).json({ success: false, message: 'Invalid ID' });
@@ -29,9 +29,9 @@ router.get('/:id', (req, res) => {
       res.json({
         success: true,
         customer: {
-          id: users.id,
-          name: users.first_name,
-          email: users.email,
+          user_id: user_id,
+          name: first_name,
+          email: email,
           number_of_items: countResult[0].number_of_items
         }
       });
